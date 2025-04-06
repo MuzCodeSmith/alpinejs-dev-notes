@@ -51,24 +51,37 @@
     </div> -->
 
     <!-- getters and setters -->
-    <div x-data="{
-        open:false,
-        get isOpen(){
-            return this.open
-        },
-        set isOpen(open){
-            this.open = open
-        },
-        toggle(){
-            this.isOpen = !this.isOpen
-        }
-    }" >
-    <button @click="toggle" >click</button>
-    <span x-show="open" 
-    x-transition:enter-start.duration.200ms
-    x-transition:enter.duration.2000ms
-    >content</span>
-</div>
+    <!-- <div x-data="{
+            open:false,
+            get isOpen(){
+                return this.open
+            },
+            set isOpen(open){
+                this.open = open
+            },
+            toggle(){
+                this.isOpen = !this.isOpen
+            }
+        }" >
+        <button @click="toggle" >click</button>
+        <span x-show="open" 
+        x-transition:enter-start.duration.200ms
+        x-transition:enter.duration.2000ms
+        >content</span>
+    </div> -->
+
+    <!-- x-for in range -->
+    <!-- <template x-data x-for="n in 5">
+        <span x-text="n"></span>
+    </template> -->
+
+    <!-- challenge -->
+    <!-- Iterate over the colors and show 40px-40px boxes -->
+    <div x-data="{colors:['red','green','blue']}" >
+        <template x-for="color in colors">
+            <div style="height: 40px; width:40px;" :style="{background:color}"></div>
+        </template>
+    </div>
     <script src="app.js"></script>
 </body>
 </html>
