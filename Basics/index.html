@@ -29,9 +29,13 @@
     </div> -->
 
     <!-- dataless component -->
-    <div x-data @click="alert('hellow')" >
+    <!-- <div x-data @click="alert('hellow')" >
         click me
-    </div>
+    </div> -->
+
+    <!-- alpine-store -->
+    <span x-data x-text="$store.creds.secret"></span>
+
     <script src="app.js"></script>
 </body>
 </html>

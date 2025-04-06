@@ -4,5 +4,10 @@ document.addEventListener('alpine:init',()=>{
         toggle(){
             this.dshow=!this.dshow;
         }
-    }))
+    }));
+
+    Alpine.store('creds',{
+        secret:'jhon82',
+        key:'jhon@test.com',
+    })
 })
