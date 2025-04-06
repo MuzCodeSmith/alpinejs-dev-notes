@@ -64,7 +64,10 @@
         }
     }" >
     <button @click="toggle" >click</button>
-    <span x-show="open">content</span>
+    <span x-show="open" 
+    x-transition:enter-start.duration.200ms
+    x-transition:enter.duration.2000ms
+    >content</span>
 </div>
     <script src="app.js"></script>
 </body>
