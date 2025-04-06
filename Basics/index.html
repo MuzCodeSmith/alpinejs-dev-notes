@@ -15,11 +15,18 @@
     </div> -->
 
     <!-- x-data and methods -->
-    <div x-data="{message:'original message',change(){
+    <!-- <div x-data="{message:'original message',change(){
         this.message = 'changed message';
         }}"
         >
         <span x-text="message" @click="change()"></span>
+    </div> -->
+
+    <!-- Reusable data -->
+    <div x-data="dropdown">
+        <button @click="toggle" >click</button>
+        <span x-show="dshow" >content</span>
     </div>
+    <script src="app.js"></script>
 </body>
 </html>
