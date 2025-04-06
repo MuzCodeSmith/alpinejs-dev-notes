@@ -23,9 +23,14 @@
     </div> -->
 
     <!-- Reusable data -->
-    <div x-data="dropdown">
+    <!-- <div x-data="dropdown">
         <button @click="toggle" >click</button>
         <span x-show="dshow" >content</span>
+    </div> -->
+
+    <!-- dataless component -->
+    <div x-data @click="alert('hellow')" >
+        click me
     </div>
     <script src="app.js"></script>
 </body>
