@@ -37,7 +37,7 @@
     <!-- <span x-data x-text="$store.creds.secret"></span> -->
 
     <!-- x-init -->
-    <div x-data="{
+    <!-- <div x-data="{
         init(){
             console.log('Alpine Initialized!')
         }
@@ -48,8 +48,24 @@
     x-init="posts= await(await fetch('https://jsonplaceholder.typicode.com/todos/1')).json()"
     >
         <span x-text="posts.title" ></span>
-    </div>
+    </div> -->
 
+    <!-- getters and setters -->
+    <div x-data="{
+        open:false,
+        get isOpen(){
+            return this.open
+        },
+        set isOpen(open){
+            this.open = open
+        },
+        toggle(){
+            this.isOpen = !this.isOpen
+        }
+    }" >
+    <button @click="toggle" >click</button>
+    <span x-show="open">content</span>
+</div>
     <script src="app.js"></script>
 </body>
 </html>
