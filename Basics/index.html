@@ -133,11 +133,16 @@
     </div> -->
 
     <!-- x-ignore -->
-    <div x-data="{name:'muzzu'}">
+    <!-- <div x-data="{name:'muzzu'}">
         <p x-ignore>hi <span x-text="name"></span></p>
         <p x-text="name"></p>
-    </div>
+    </div> -->
 
+    <!-- x-ref -->
+    <div x-data>
+        <input type="text" x-ref="input">
+        <button @click="$refs.input.style.background='blue' " >change</button>
+    </div>
     <script src="app.js"></script>
 </body>
 </html>
