@@ -97,8 +97,14 @@
     </div>  -->
     
     <!-- x-on with custom events -->
-    <div x-data="{data:20}" @scroll.window="console.log('scrolling...')" @inc="data=data+1;console.log(data)">
+    <!-- <div x-data="{data:20}" @scroll.window="console.log('scrolling...')" @inc="data=data+1;console.log(data)">
         <button @click="$dispatch('inc')">click</button>
+    </div> -->
+
+    <!-- x-model -->
+    <div x-data="{message:'please enter'}">
+        <input type="text" x-model.debounce.1000ms="message">
+        <p x-text="message"></p>
     </div>
 
     <script src="app.js"></script>
