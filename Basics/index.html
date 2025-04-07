@@ -179,10 +179,19 @@
     </div> -->
 
     <!-- $root -->
-    <div x-data="{message:'hello'}">
+    <!-- <div x-data="{message:'hello'}">
         <div>
             <div>
                 <button @click="console.log($root)" ></button>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- $data -->
+    <div x-data="{message:'hello'}">
+        <div>
+            <div  x-data="{message2:'hi'}">
+                <button @click="console.log($data)" x-text="$data.message">click</button>
             </div>
         </div>
     </div>
