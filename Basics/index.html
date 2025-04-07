@@ -173,10 +173,20 @@
     </div> -->
 
     <!-- nextTick -->
-    <div x-data="{message:'hello'}" >
+    <!-- <div x-data="{message:'hello'}" >
         <button @click="message='hi'; $nextTick(()=>console.log($refs.p.innerHTML))">button</button>
         <p x-ref="p" x-text="message"></p>
+    </div> -->
+
+    <!-- $root -->
+    <div x-data="{message:'hello'}">
+        <div>
+            <div>
+                <button @click="console.log($root)" ></button>
+            </div>
+        </div>
     </div>
+
     <script src="app.js"></script>
 </body>
 </html>
