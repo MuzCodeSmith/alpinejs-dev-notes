@@ -77,11 +77,24 @@
 
     <!-- challenge -->
     <!-- Iterate over the colors and show 40px-40px boxes -->
-    <div x-data="{colors:['red','green','blue']}" >
+    <!-- <div x-data="{colors:['red','green','blue']}" >
         <template x-for="color in colors">
             <div style="height: 40px; width:40px;" :style="{background:color}"></div>
         </template>
+    </div> -->
+
+    <!-- x-on -->
+    <div x-data>
+        <!-- <input type="text" x-on:input="console.log($event.target.value)"> -->
+        <!-- <input type="text" x-on:keyup="console.log($event.target.value)"> -->
+        <!-- <input type="text" x-on:keyup.enter="console.log($event.target.value)"> -->
+        <!-- <input type="text" x-on:keyup.shift.enter="console.log($event.target.value)"> -->
+        <!-- <button @click.outside="console.log('look properly!')" >submit</button> -->
+        <!-- <input type="text" x-on:keyup.once="console.log($event.target.value)"> -->
+        <input type="text" @input.debounce="console.log($event.target.value)">
     </div>
+
+
     <script src="app.js"></script>
 </body>
 </html>
