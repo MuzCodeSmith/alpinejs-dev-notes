@@ -139,10 +139,23 @@
     </div> -->
 
     <!-- x-ref -->
-    <div x-data>
+    <!-- <div x-data>
         <input type="text" x-ref="input">
         <button @click="$refs.input.style.background='blue' " >change</button>
+    </div> -->
+
+    <!-- x-cloak fixing flicker event -->
+    <div x-data="{open:false}">
+        <button @click="open=!open">click</button>
+        <div x-show="open" x-cloak >content</div>
     </div>
+
+    <style>
+        [x-cloak]{
+            display: none;
+        }
+    </style>
+    
     <script src="app.js"></script>
 </body>
 </html>
