@@ -113,8 +113,7 @@
     1st input for text. Whatever you write inside the input that should become the text of the button.
     2nd input for background color. Whatever you type color inside the input and that will become button background color
     3rd input for button id. Whatever you type inside that will become button id 
-    -->
-
+  
     <div x-data="{
         btnText:'submit',
         btnColor:'red',
@@ -124,8 +123,15 @@
     <input type="text" x-model="btnColor">
     <input type="text" x-model="btnId">
     <button :id="btnId" :style="{background:btnColor}" x-text="btnText"></button>
-    </div>
+    </div> 
+    -->
 
+    <!-- x-effect -->
+
+    <div x-data="{name:'muzzu',message:''}" x-effect="message='hello '+name" >
+        <input type="text">
+        <p x-text="message"></p>
+    </div>
 
     <script src="app.js"></script>
 </body>
