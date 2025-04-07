@@ -70,6 +70,8 @@
         >content</span>
     </div> -->
 
+    <!-- <div id="here"></div> -->
+
     <!-- x-for in range -->
     <!-- <template x-data x-for="n in 5">
         <span x-text="n"></span>
@@ -144,18 +146,22 @@
         <button @click="$refs.input.style.background='blue' " >change</button>
     </div> -->
 
-    <!-- x-cloak fixing flicker event -->
-    <div x-data="{open:false}">
+    <!-- x-cloak fixing flicker issue -->
+    <!-- <div x-data="{open:false}">
         <button @click="open=!open">click</button>
         <div x-show="open" x-cloak >content</div>
     </div>
-
     <style>
         [x-cloak]{
             display: none;
         }
-    </style>
+    </style> -->
     
+    <!-- x-transport -->
+    <div x-data x-transport="#here" >
+        <button >transport</button>
+    </div>
+
     <script src="app.js"></script>
 </body>
 </html>
