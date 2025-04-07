@@ -84,15 +84,18 @@
     </div> -->
 
     <!-- x-on -->
-    <div x-data>
-        <!-- <input type="text" x-on:input="console.log($event.target.value)"> -->
-        <!-- <input type="text" x-on:keyup="console.log($event.target.value)"> -->
-        <!-- <input type="text" x-on:keyup.enter="console.log($event.target.value)"> -->
-        <!-- <input type="text" x-on:keyup.shift.enter="console.log($event.target.value)"> -->
-        <!-- <button @click.outside="console.log('look properly!')" >submit</button> -->
-        <!-- <input type="text" x-on:keyup.once="console.log($event.target.value)"> -->
-        <input type="text" @input.debounce="console.log($event.target.value)">
-    </div>
+     <div x-data>
+       <!-- <input type="text" x-on:input="console.log($event.target.value)">
+        <input type="text" x-on:keyup="console.log($event.target.value)">
+        <input type="text" x-on:keyup.enter="console.log($event.target.value)">
+        <input type="text" x-on:keyup.shift.enter="console.log($event.target.value)">
+        <input type="text" x-on:keyup.once="console.log($event.target.value)">
+        <input type="text" @input.debounce.500ms="console.log($event.target.value)">
+        <button @click.outside="console.log('look properly!')" >submit</button>-->
+        <input type="text" @input.debounce.500ms="console.log($event.target.value)">
+        <input type="text" @input.throttle.5000ms="console.log($event.target.value)">
+    </div> 
+
 
 
     <script src="app.js"></script>
