@@ -127,10 +127,15 @@
     -->
 
     <!-- x-effect -->
-
-    <div x-data="{name:'muzzu',message:''}" x-effect="message='hello '+name" >
+    <!-- <div x-data="{name:'muzzu',message:''}" x-effect="message='hello '+name" >
         <input type="text">
         <p x-text="message"></p>
+    </div> -->
+
+    <!-- x-ignore -->
+    <div x-data="{name:'muzzu'}">
+        <p x-ignore>hi <span x-text="name"></span></p>
+        <p x-text="name"></p>
     </div>
 
     <script src="app.js"></script>
