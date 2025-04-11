@@ -1,0 +1,66 @@
+<script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
+<div x-data="numberMask()" class="p-4">
+  <input
+    type="text"
+    x-model="displayValue"
+    @input="formatInput"
+    @blur="applyMask"
+    placeholder="00.00"
+    class="border px-2 py-1"
+  />
+  <p x-text="displayValue"></p>
+</div>
+
+<script>
+  function numberMask() {
+    return {
+      displayValue: '',
+
+      formatInput(event) {
+        let val = event.target.value;
+        
+        // Remove any characters that aren't digits or dot.
+        val = val.replace(/[^0-9.]/g, '');
+        
+        // If there is more than one dot, remove extras (keep only the first).
+        const firstDotIndex = val.indexOf('.');
+        if (firstDotIndex !== -1) {
+          // Extract integer part and decimal part separately.
+          let intPart = val.slice(0, firstDotIndex);
+          let decimalPart = val.slice(firstDotIndex + 1).replace(/\./g, '').slice(0, 2);
+          
+          // Remove leading zeros from integer part unless it is zero.
+          intPart = intPart.replace(/^0+(?!$)/, '');
+          intPart = intPart === '' ? '0' : intPart;
+          
+          val = intPart + '.' + decimalPart;
+        } else {
+          // Remove leading zeros from the integer input if no dot is present.
+          val = val.replace(/^0+(?!$)/, '');
+          // If the input becomes empty, reset to empty (or you could force a '0')
+        }
+        
+        // Update the model in real-time.
+        this.displayValue = val;
+      },
+
+      applyMask() {
+        // Split the value by dot.
+        let parts = this.displayValue.split('.');
+        let intPart = parts[0] || '0';
+        let decimalPart = parts[1] || '';
+        
+        // Remove any stray leading zeros.
+        intPart = intPart.replace(/^0+(?!$)/, '');
+        if (intPart === '') intPart = '0';
+        
+        // Force the decimal part to exactly 2 digits: trim or pad with zeros.
+        decimalPart = decimalPart.padEnd(2, '0').slice(0, 2);
+        
+        // Set the final value.
+        this.displayValue = `${intPart}.${decimalPart}`;
+      }
+    };
+  }
+</script>
